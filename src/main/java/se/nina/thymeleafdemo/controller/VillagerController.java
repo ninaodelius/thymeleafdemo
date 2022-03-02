@@ -65,5 +65,12 @@ public class VillagerController {
         return "redirect:/villagers/list";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("villagerId") int theId) {
+        //delete the villager
+        villagerService.deleteById(theId);
+        //redirect to /villagers/list
+        return "redirect:/villagers/list";
+    }
 
 }

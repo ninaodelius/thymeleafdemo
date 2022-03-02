@@ -11,7 +11,7 @@ public class DemoController {
 
     @GetMapping("/hello")
     public String sayHello(Model theModel) {
-        theModel.addAttribute("the date", new java.util.Date());
+        theModel.addAttribute("thedate", new java.util.Date());
     return "helloworld";
     }
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Villager Directory</h3>
+<hr>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Personality</th>
+        <th>Species</th>
+    </tr>
+    </thead>
+
+<tbody>
+<tr th:each= "tempVillager : ${villagers}">
+    <td th:text="${tempVillager.name}"></td>
+    <td th:text="${tempVillager.personality}"></td>
+    <td th:text="${tempVillager.species}"></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

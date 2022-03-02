@@ -14,25 +14,8 @@ import java.util.List;
 @RequestMapping("/villagers")
 public class VillagerController {
 
-    //load villager data
-    private List<Villager> theVillagers;
 
-    @PostConstruct
-    private void loadData() {
 
-        //create villagers
-        Villager vil1 = new Villager(1, "Julian", "Smug", "Horse");
-        Villager vil2 = new Villager(2, "Gaston", "Cranky", "Rabbit");
-        Villager vil3 = new Villager(3, "Sprinkle", "Peppy", "Penguin");
-        //create the list
-        theVillagers = new ArrayList<>();
-
-        //add to the list
-        theVillagers.add(vil1);
-        theVillagers.add(vil2);
-        theVillagers.add(vil3);
-
-    }
 
     //add mapping for "/list"
     @GetMapping("/list")

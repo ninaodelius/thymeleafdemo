@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import se.nina.thymeleafdemo.model.Villager;
+import se.nina.thymeleafdemo.entity.Villager;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

@@ -22,7 +22,7 @@ public class VillagerServiceImpl implements VillagerService{
 
     @Override
     public List<Villager> findAll() {
-        return villagerRepository.findAll();
+        return villagerRepository.findAllByOrderByNameAsc();
     }
 
     @Override

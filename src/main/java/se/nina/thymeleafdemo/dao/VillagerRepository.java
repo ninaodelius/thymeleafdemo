@@ -13,5 +13,5 @@ public interface VillagerRepository  extends JpaRepository <Villager, Integer> {
     //add a method to sort by name
     //spring data jpa will parse the method name, find all by, orderby,name,
     //looks for specific format and pattern and creates appropriate query
-    public List<Villager> findAllByOrderByName();
+    public List<Villager> findAllByOrderByNameAsc();
 }

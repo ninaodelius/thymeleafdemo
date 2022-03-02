@@ -24,6 +24,7 @@
         <th>Name</th>
         <th>Personality</th>
         <th>Species</th>
+        <th>Action</th>
     </tr>
     </thead>
 
@@ -32,6 +33,13 @@
     <td th:text="${tempVillager.name}"></td>
     <td th:text="${tempVillager.personality}"></td>
     <td th:text="${tempVillager.species}"></td>
+
+    <td>
+        <a th:href="@{/villagers/showFormForUpdate(villagerId=${tempVillager.id})}"
+        class="btn btn-info btn-sm">
+        Update
+        </a>
+    </td>
 </tr>
 </tbody>
 </table>

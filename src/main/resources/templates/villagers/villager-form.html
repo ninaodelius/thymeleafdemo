@@ -20,6 +20,10 @@
     <form action="#" th:action="@{/villagers/save}"
                 th:object="${villager}" method="POST">
 
+
+        <!-- hidden form field to handle update-->
+        <input type="hidden" th:field="*{id}"/>
+
         <input type="text" th:field="*{name}"
         class="form-control mb-4 col-4" placeholder="Name">
         <input type="text" th:field="*{personality}"

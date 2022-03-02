@@ -2,10 +2,7 @@ package se.nina.thymeleafdemo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import se.nina.thymeleafdemo.entity.Villager;
 import se.nina.thymeleafdemo.service.VillagerService;
 
@@ -48,6 +45,17 @@ public class VillagerController {
         return "villagers/villager-form";
     }
 
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("villagerId") int theId,
+                                    Model theModel) {
+        //get the villager from the service
+        Villager theVillager = villagerService.findById(theId);
+        //set the villager as a model attribute to pre-populate the form
+        theModel.addAttribute("villager", theVillager);
+        //send over to our form
+        return "villagers/villager-form";
+    }
+
     @PostMapping("/save")
     public String saveVillager(@ModelAttribute("villager") Villager theVillager) {
         //save the villager
@@ -56,4 +64,6 @@ public class VillagerController {
         //use a redirect to prevent duplicate submissions
         return "redirect:/villagers/list";
     }
+
+
 }
